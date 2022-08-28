@@ -12,10 +12,16 @@ import {
   Col,
   Image,
   Carousel,
-  Badge
-  
+  Badge,
+  Dropdown,
 } from "react-bootstrap";
-import { FaRegUser,FaShoppingCart,FaInstagram,FaFacebook,FaTwitter } from "react-icons/fa";
+import {
+  FaRegUser,
+  FaShoppingCart,
+  FaInstagram,
+  FaFacebook,
+  FaTwitter,
+} from "react-icons/fa";
 
 function App() {
   return (
@@ -23,12 +29,15 @@ function App() {
       <header>
         <Navbar bg="light" expand="lg">
           <Container>
-            <Navbar.Brand href="#home" >WheyUp</Navbar.Brand>
+            <Navbar.Brand href="#home">WheyUp</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                
-                <NavDropdown title="Potein" id="basic-nav-dropdown" className="mx-3">
+                <NavDropdown
+                  title="Potein"
+                  id="basic-nav-dropdown"
+                  className="mx-3"
+                >
                   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
                     Another action
@@ -41,7 +50,11 @@ function App() {
                     Separated link
                   </NavDropdown.Item>
                 </NavDropdown>
-                <NavDropdown title="Supplements" id="basic-nav-dropdown" className="mx-3">
+                <NavDropdown
+                  title="Supplements"
+                  id="basic-nav-dropdown"
+                  className="mx-3"
+                >
                   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
                     Another action
@@ -54,59 +67,154 @@ function App() {
                     Separated link
                   </NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="#home" className="mx-3">About Us</Nav.Link>
-                <Nav.Link href="#link" className="mx-3">ForLater use</Nav.Link>
+                <Nav.Link href="#home" className="mx-3">
+                  About Us
+                </Nav.Link>
+                <Nav.Link href="#link" className="mx-3">
+                  ForLater use
+                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
-            <span className="icons"><FaRegUser size={"1.7em"}></FaRegUser> </span>
-             <span className="icons"><FaShoppingCart size={"1.7em"}></FaShoppingCart></span> 
-             
-
+            <span className="icons">
+              <FaRegUser size={"1.7em"}></FaRegUser>{" "}
+            </span>
+            <span className="icons">
+              <FaShoppingCart size={"1.7em"}></FaShoppingCart>
+            </span>
           </Container>
         </Navbar>
       </header>
       <main>
+        <Container>
+          <Row className="px-4 my-5">
+            <Col sm={8}>
+              <Carousel variant="dark">
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src="https://dummyimage.com/800x500/86b5b8/ba8a54"
+                    alt="First slide"
+                  />
+                  <Carousel.Caption></Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src="https://dummyimage.com/800x500/b6a9d6/151b57"
+                    alt="Second slide"
+                  />
+                  <Carousel.Caption></Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src="https://dummyimage.com/800x500/f299ab/ed4e4e"
+                    alt="Third slide"
+                  />
+                  <Carousel.Caption></Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
+            </Col>
+            <Col sm={4} className="text-center">
+              <h3>Item Name</h3>
+              <p>some info about the item</p>
+              <Dropdown>
+                Size:
+                <Dropdown.Toggle variant="light" id="dropdown-basic">
+                  Select Size
+                </Dropdown.Toggle>
+
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">
+                    Another action
+                  </Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">
+                    Something else
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+                <Button variant="success" className="mx-3">
+                <i class="bi bi-cart"></i>Add to cart{" "}
+              </Button>{" "}
+              </Dropdown>
+            </Col>
+          </Row>
+        </Container>
       </main>
       <footer class="py-5 my-5 bg-dark">
-      <div className="container-fluid text-center text-md-left">
-        <div className="row">
+        <div className="container-fluid text-center text-md-left">
+          <div className="row">
             <div className="col-md-6 mt-md-0 mt-3">
-                <h5 className="text-uppercase">Footer Title</h5>
-                <p>Here the footer content will be.</p>
+              <h5 className="text-uppercase">Footer Title</h5>
+              <p>Here the footer content will be.</p>
             </div>
 
-            <hr className="clearfix w-100 d-md-none pb-0"/>
-
-            <div className="col-md-3 mb-md-0 mb-3">
-                <h5 className="text-uppercase">Links</h5>
-                <ul className="list-unstyled">
-                    <li><a href="#!"className="footer-link">Link 1</a></li>
-                    <li><a href="#!"className="footer-link">Link 2</a></li>
-                    <li><a href="#!"className="footer-link">Link 3</a></li>
-                    <li><a href="#!"className="footer-link">Link 4</a></li>
-                </ul>
-            </div>
+            <hr className="clearfix w-100 d-md-none pb-0" />
 
             <div className="col-md-3 mb-md-0 mb-3">
-                <h5 className="text-uppercase">Links</h5>
-                <ul className="list-unstyled">
-                    <li><a href="#!" className="footer-link">Link 1</a></li>
-                    <li><a href="#!"className="footer-link">Link 2</a></li>
-                    <li><a href="#!"className="footer-link">Link 3</a></li>
-                </ul>
+              <h5 className="text-uppercase">Links</h5>
+              <ul className="list-unstyled">
+                <li>
+                  <a href="#!" className="footer-link">
+                    Link 1
+                  </a>
+                </li>
+                <li>
+                  <a href="#!" className="footer-link">
+                    Link 2
+                  </a>
+                </li>
+                <li>
+                  <a href="#!" className="footer-link">
+                    Link 3
+                  </a>
+                </li>
+                <li>
+                  <a href="#!" className="footer-link">
+                    Link 4
+                  </a>
+                </li>
+              </ul>
             </div>
+
+            <div className="col-md-3 mb-md-0 mb-3">
+              <h5 className="text-uppercase">Links</h5>
+              <ul className="list-unstyled">
+                <li>
+                  <a href="#!" className="footer-link">
+                    Link 1
+                  </a>
+                </li>
+                <li>
+                  <a href="#!" className="footer-link">
+                    Link 2
+                  </a>
+                </li>
+                <li>
+                  <a href="#!" className="footer-link">
+                    Link 3
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-    </div>
 
-    <div className="footer-copyright text-center py-3">
-        <Container>
-             <span className="icons"><FaInstagram></FaInstagram></span>
-             <span className="icons"><FaFacebook></FaFacebook></span>
-             <span className="icons"><FaTwitter></FaTwitter></span>
-            </Container>
-        © 2022 Copyright:
-        <p>Lior Kogan</p>
-    </div>
+        <div className="footer-copyright text-center py-3">
+          <Container>
+            <span className="icons">
+              <FaInstagram></FaInstagram>
+            </span>
+            <span className="icons">
+              <FaFacebook></FaFacebook>
+            </span>
+            <span className="icons">
+              <FaTwitter></FaTwitter>
+            </span>
+          </Container>
+          © 2022 Copyright:
+          <p>Lior Kogan</p>
+        </div>
       </footer>
     </div>
   );
