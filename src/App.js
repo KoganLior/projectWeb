@@ -2,9 +2,11 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 //site components
-import SiteHeader from "./components/Header.js"
-import SiteFooter from "./components/Footer.js"
-import ProductPage from "./components/ProductPage.js"
+import SiteHeader from "./components/Header.js";
+import SiteFooter from "./components/Footer.js";
+import CartPage from "./components/cartPage.js"
+import ProductPage from "./components/ProductPage.js";
+import { Container, Col, Row, Stack } from "react-bootstrap";
 
 function App() {
   return (
@@ -13,7 +15,7 @@ function App() {
         <SiteHeader></SiteHeader>
       </header>
       <main>
-       <ProductPage></ProductPage>
+        <CartPage></CartPage>
       </main>
       <SiteFooter></SiteFooter>
     </div>
