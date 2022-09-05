@@ -1,11 +1,11 @@
 import {
-  Button,
-  Container,
-  Row,
-  Col,
-  Carousel,
-  Dropdown,
-} from "react-bootstrap";
+    Button,
+    Container,
+    Row,
+    Col,
+    Carousel,
+    Dropdown,
+  } from "react-bootstrap";
 
 export default function ProductPage() {
   return (
