@@ -9,3 +9,20 @@ footer {
   margin-left: 4px;
 }
 
+.modal-title{
+  margin-left: 12rem;
+}
+
+.modal-content{
+  color: black;
+  background-color: rgba(131, 81, 81, 0.482)
+}
+.form{
+  font-family: Arial, Helvetica, sans-serif;
+   background-color: white;
+  box-shadow: 5px 5px 5px rgba(0,0, 0,0.2); 
+}
+
+#login{
+  margin-left: 20rem
+}
