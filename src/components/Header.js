@@ -1,6 +1,6 @@
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { FaRegUser, FaShoppingCart } from "react-icons/fa";
-export default function SiteHeader() {
+export default function SiteHeader(props) {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -47,7 +47,7 @@ export default function SiteHeader() {
           </Nav>
         </Navbar.Collapse>
         <span className="icons">
-          <FaRegUser size={"1.7em"}></FaRegUser>{" "}
+          <FaRegUser size={"1.7em"} onClick={props.userIconHandler}></FaRegUser>{" "}
         </span>
         <span className="icons">
           <FaShoppingCart size={"1.7em"}></FaShoppingCart>

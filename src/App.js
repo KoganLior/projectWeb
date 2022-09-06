@@ -10,18 +10,19 @@ import { useState } from "react";
 import LoginModal from "./components/loginModal";
 
 function App() {
-  //// modal
-  
-
-  ////
+  //// Login Modal state
+  const [show, setShow] = useState(false);
+  const closeLogin = () => setShow(false);
+  const userIconHandler = () => setShow(true);
+  ////------------------------------------------------////
 
   return (
     <div className="App">
       <header>
-        <SiteHeader></SiteHeader>
+        <SiteHeader userIconHandler={userIconHandler}></SiteHeader>
       </header>
       <main>
-        <LoginModal></LoginModal>
+        <LoginModal show={show} closeLogin={closeLogin}></LoginModal>
       </main>
       <SiteFooter></SiteFooter>
     </div>

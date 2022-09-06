@@ -7,8 +7,11 @@ footer {
 .icons{
   margin-right: 4px;
   margin-left: 4px;
+  
 }
-
+.icons:hover{
+  cursor: pointer;
+}
 .modal-title{
   margin-left: 12rem;
 }
