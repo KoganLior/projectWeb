@@ -1,18 +1,13 @@
 import { Container, Form, Button, Modal } from "react-bootstrap";
 import { useState } from "react";
 
-export default function LoginModal() {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+export default function LoginModal(props) {
+  
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
+      
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={props.show} onHide={props.closeLogin}>
         <Modal.Header closeButton>
           <Modal.Title>Login</Modal.Title>
         </Modal.Header>
