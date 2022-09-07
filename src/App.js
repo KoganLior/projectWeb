@@ -8,21 +8,34 @@ import CartPage from "./components/cartPage.js";
 import ProductPage from "./components/ProductPage.js";
 import { useState } from "react";
 import LoginModal from "./components/loginModal";
+import SignUpModal from "./components/SignUpModal";
 
 function App() {
   //// Login Modal state
-  const [show, setShow] = useState(false);
-  const closeLogin = () => setShow(false);
-  const userIconHandler = () => setShow(true);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const closeLoginModal = () => setShowLoginModal(false);
+  const popLoginModal = () => setShowLoginModal(true);
+  ////------------------------------------------------////
+
+  //// SignUp  Modal  state
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
+  const closeSignUpModal = () => setShowSignUpModal(false);
+  const popSignUpModal = () => setShowSignUpModal(true);
+
   ////------------------------------------------------////
 
   return (
     <div className="App">
       <header>
-        <SiteHeader userIconHandler={userIconHandler}></SiteHeader>
+        <SiteHeader userIconHandler={popSignUpModal}></SiteHeader>
       </header>
       <main>
-        <LoginModal show={show} closeLogin={closeLogin}></LoginModal>
+        
+        <SignUpModal
+          show={showSignUpModal}
+          close={closeSignUpModal}
+          
+        ></SignUpModal>
       </main>
       <SiteFooter></SiteFooter>
     </div>

@@ -26,6 +26,21 @@ footer {
   box-shadow: 5px 5px 5px rgba(0,0, 0,0.2); 
 }
 
-#login{
+#loginButton{
   margin-left: 20rem
+}
+
+#signUpButton{
+  width: 400px;
+}
+.modalInput{
+  width: 100%;
+}
+
+
+footer{
+  position: absolute;
+  bottom: 0;
+  
+  width: 100vw;
 }
