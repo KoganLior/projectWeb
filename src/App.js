@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 //site components
 import SiteHeader from "./components/Header.js";
 import SiteFooter from "./components/Footer.js";
@@ -26,17 +26,21 @@ function App() {
 
   return (
     <div className="App">
+      <BrowserRouter>
       <header>
-        <SiteHeader userIconHandler={popSignUpModal}></SiteHeader>
+        <SiteHeader userIconHandler={popLoginModal}></SiteHeader>
       </header>
       <main>
-        
-        <SignUpModal
-          show={showSignUpModal}
-          close={closeSignUpModal}
-          
-        ></SignUpModal>
+       
       </main>
+      
+      <Routes>
+        <Route path="/" element={<CartPage/>}>
+          <Route path="Login" element={<LoginModal show={showLoginModal} close={closeLoginModal}/>}></Route>
+        </Route>
+
+      </Routes>
+      </BrowserRouter>
       <SiteFooter></SiteFooter>
     </div>
   );
