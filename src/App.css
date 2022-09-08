@@ -1,8 +1,12 @@
 footer {
   color: azure;
 }
+
 .footer-link {
   color: azure;
+}
+header>.icons{
+  color:black ;
 }
 .icons{
   margin-right: 4px;
@@ -39,8 +43,5 @@ footer {
 
 
 footer{
-  position: absolute;
-  bottom: 0;
-  
   width: 100vw;
 }

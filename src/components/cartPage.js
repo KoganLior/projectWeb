@@ -1,4 +1,6 @@
 import ProductInCart from "./productInCart"
+import {Outlet} from "react-router-dom"
+
 export default function CartPage(){
     return (
         <section class="py-5">
@@ -47,7 +49,7 @@ export default function CartPage(){
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
                         <h5 class="fw-bold">$400.00</h5>
                         </li>
-                    </ul><a href="#" class="btn btn-dark rounded-pill py-2 d-md-block">Procceed to checkout</a>
+                    </ul><a href="local.com" class="btn btn-dark rounded-pill py-2 d-md-block">Procceed to checkout</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -63,9 +65,9 @@ export default function CartPage(){
                     </div>
                     
                 </div>
-                
                 </div>
             </div>
+            <Outlet></Outlet>
             </section>
     )
 }

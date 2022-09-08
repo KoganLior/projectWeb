@@ -1,6 +1,5 @@
 import { Container, Form, Button, Modal } from "react-bootstrap";
 import { useState } from "react";
-
 export default function LoginModal(props) {
   
   return (
@@ -36,12 +35,13 @@ export default function LoginModal(props) {
                   <Button variant="dark" id="loginButton" className="mb-3">
                     Login
                   </Button>
-                  <p className="mt-3">Don't have an account ? <a href="">Sign up here</a></p>
+                  <p className="mt-3">Don't have an account ? <l>Sign up here</l></p>
                 </Form.Group>
               </Form>
             </div>
           </Container>
         </Modal.Body>
+       
       </Modal>
     </>
   );
