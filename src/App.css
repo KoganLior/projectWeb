@@ -45,3 +45,23 @@ header>.icons{
 footer{
   width: 100vw;
 }
+
+.homePageCarousel{
+  margin-top: 20px;
+  padding-top: 30px;
+  width: 1300px;
+  height: 620px;
+  
+  margin-bottom: 100px;
+}
+
+.homePageRowTitle{
+  margin:25px;
+  text-align: center;
+  
+}
+.homePageCarousel-Img{
+  height: 600px;
+  width: 1300px;
+  
+}
