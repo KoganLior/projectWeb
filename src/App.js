@@ -9,6 +9,7 @@ import ProductPage from "./components/ProductPage.js";
 import { useState } from "react";
 import LoginModal from "./components/loginModal";
 import SignUpModal from "./components/SignUpModal";
+import HomePage from "./components/homePage.js";
 
 function App() {
   //// Login Modal state
@@ -31,15 +32,18 @@ function App() {
         <SiteHeader userIconHandler={popLoginModal}></SiteHeader>
       </header>
       <main>
-       
-      </main>
-      
+        <LoginModal show={showLoginModal} close={closeLoginModal}></LoginModal>
       <Routes>
-        <Route path="/" element={<CartPage/>}>
-          <Route path="Login" element={<LoginModal show={showLoginModal} close={closeLoginModal}/>}></Route>
+        <Route path="/" element={<HomePage/>}>
+          <Route path="cart" element={<CartPage></CartPage>}></Route>
         </Route>
 
       </Routes>
+
+       
+      </main>
+      
+      
       </BrowserRouter>
       <SiteFooter></SiteFooter>
     </div>

@@ -1,5 +1,6 @@
 import { Container, Form, Button, Modal } from "react-bootstrap";
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 export default function LoginModal(props) {
   
   return (
@@ -43,6 +44,7 @@ export default function LoginModal(props) {
         </Modal.Body>
        
       </Modal>
+      <Outlet></Outlet>
     </>
   );
 }
