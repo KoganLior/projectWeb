@@ -9,20 +9,25 @@ import { useEffect, useState } from "react";
 import LoginModal from "./components/loginModal";
 import HomePage from "./components/homePage.js";
 import { getProductByID } from "./DAL/Api";
+import SignUpModal from "./components/SignUpModal";
 
 
 function App() {
+
   //// Login Modal state
   const [showLoginModal, setShowLoginModal] = useState(false);
   const closeLoginModal = () => setShowLoginModal(false);
-  const popLoginModal = () => setShowLoginModal(true);
+  const popLoginModal = () => {
+    setShowSignUpModal(false)
+    setShowLoginModal(true)};
   ////------------------------------------------------////
 
   //// SignUp  Modal  state
   const [showSignUpModal, setShowSignUpModal] = useState(false);
   const closeSignUpModal = () => setShowSignUpModal(false);
-  const popSignUpModal = () => setShowSignUpModal(true);
-
+  const popSignUpModal = () => {
+    setShowLoginModal(false)
+    setShowSignUpModal(true)}
   ////------------------------------------------------////
 
   return (
@@ -32,15 +37,17 @@ function App() {
         <SiteHeader userIconHandler={popLoginModal}></SiteHeader>
       </header>
       <main>
-        <LoginModal show={showLoginModal} close={closeLoginModal}></LoginModal>
+        
       <Routes>
+        
         <Route path="/" element={<HomePage/>}>
           <Route path="cart" element={<CartPage></CartPage>}></Route>
+          
         </Route>
 
       </Routes>
-
-       
+      <LoginModal show={showLoginModal} close={closeLoginModal} switchPanel={popSignUpModal}></LoginModal>
+      <SignUpModal show={showSignUpModal} close={closeSignUpModal} switchPanel={popLoginModal}></SignUpModal>
       </main>
       
       

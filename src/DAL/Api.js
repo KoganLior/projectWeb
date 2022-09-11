@@ -31,3 +31,8 @@ export async function getProductImgByID(id){
    .then(data=>data)
 }
 
+export async function getHomePageProductDetails(productID){
+    return fetch(`http://localhost:3300/productDetails/id/${productID}`)
+        .then(response=>response.json())
+        .then(data=>data)
+}

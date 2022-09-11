@@ -36,7 +36,7 @@ export default function LoginModal(props) {
                   <Button variant="dark" id="loginButton" className="mb-3">
                     Login
                   </Button>
-                  <p className="mt-3">Don't have an account ? <l>Sign up here</l></p>
+                  <p className="mt-3">Don't have an account ? <l onClick={props.switchPanel}>Sign up here</l></p>
                 </Form.Group>
               </Form>
             </div>

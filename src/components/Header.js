@@ -47,12 +47,12 @@ export default function SiteHeader(props) {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Link to='/Login'>
+    
         <span className="icons">
           
           <FaRegUser size={"1.7em"} onClick={props.userIconHandler}></FaRegUser>{" "}
           
-        </span></Link>
+        </span>
         <span className="icons">
           <FaShoppingCart size={"1.7em"}></FaShoppingCart>
         </span>
