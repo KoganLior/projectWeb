@@ -1,10 +1,23 @@
+import { useEffect,useState } from "react"
 import {Col} from "react-bootstrap"
+import { getProductImgByID } from "../DAL/Api"
 export default function HomePageProduct(props){
+  
+
+  const [imgs, setImgs] = useState("")
+
+    async function getImg(){
+      const productImg= await getProductImgByID(props.id)
+      console.log(productImg.source)
+      setImgs(productImg.source)
+    } 
+    
+    useEffect(()=>{getImg()},[])
     return(
         <Col sm="3">
             <div className="p-2">
               <img
-                src="https://dummyimage.com/800x500/b6a9d6/151b57"
+                src={imgs}
                 alt=""
                 width="340"
                 className="img-fluid rounded shadow-sm"

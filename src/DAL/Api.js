@@ -20,7 +20,14 @@ export async function getHomeProducts(){
 
 
 export function getAllProducts(){
-    fetch("url.nice")
+    return fetch("url.nice")
         .then(response=>response.json())
         .then(data=>{return data})
 }
+
+export async function getProductImgByID(id){
+    return fetch(`http://localhost:3300/productImg/id/${id}`)
+   .then(response=>response.json())
+   .then(data=>data)
+}
+

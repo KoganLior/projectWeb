@@ -6,16 +6,13 @@ export default function HomePage() {
 
   const [products, setProducts] = useState([])
 
-  const newPods = []
- 
-
   useEffect(() => {
     async function getData() {
       setProducts(await getHomeProducts())
     }
     getData()
   }, [])
-  console.log(products);
+  
   return (
     <>
       <Container>
@@ -50,7 +47,7 @@ export default function HomePage() {
         {/* Mini Products Row */}
         <h1 className="homePageRowTitle">Best Sellers</h1>
         <Row>
-          {products.slice(0,4).map(product=> <HomePageProduct name={product.name} ></HomePageProduct>)}
+          {products.slice(0,4).map(product=> <HomePageProduct name={product.name} id={product.id}></HomePageProduct>)}
           
         </Row>
 
@@ -60,7 +57,7 @@ export default function HomePage() {
 
 
         <Row>
-        {products.slice(4,products.length).map(product=> <HomePageProduct name={product.name} ></HomePageProduct>)}
+        {products.slice(4,products.length).map(product=> <HomePageProduct name={product.name} id={product.id} key={product.name} ></HomePageProduct>)}
         </Row>
 
       </Container>
