@@ -5,10 +5,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SiteHeader from "./components/Header.js";
 import SiteFooter from "./components/Footer.js";
 import CartPage from "./components/cartPage.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LoginModal from "./components/loginModal";
 import HomePage from "./components/homePage.js";
-import getUser from "./DAL/Api";
+import { getProductByID } from "./DAL/Api";
+
 
 function App() {
   //// Login Modal state
@@ -24,7 +25,6 @@ function App() {
 
   ////------------------------------------------------////
 
-  getUser()
   return (
     <div className="App">
       <BrowserRouter>
