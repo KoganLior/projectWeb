@@ -1,7 +1,18 @@
+import { useEffect, useState } from "react";
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { FaRegUser, FaShoppingCart } from "react-icons/fa";
-import {Link } from 'react-router-dom'
+import { getCategories } from "../DAL/Api";
+
 export default function SiteHeader(props) {
+
+ const [categories,setCategories]=useState([])
+
+ async function getAllCategories(){
+    const categoriesNames= await getCategories()
+    setCategories(categoriesNames)
+ }
+
+ useEffect(()=>{getAllCategories()},[])
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -9,41 +20,17 @@ export default function SiteHeader(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavDropdown
-              title="Potein"
-              id="basic-nav-dropdown"
-              className="mx-3"
-            >
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+          <Nav.Link href="#link" className="mx-3">Protein</Nav.Link>
             <NavDropdown
               title="Supplements"
               id="basic-nav-dropdown"
               className="mx-3"
             >
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
+              {categories.map(category=>(<NavDropdown.Item href="#action/3.1">{category.name}</NavDropdown.Item>) )}
+             
             </NavDropdown>
             <Nav.Link href="#home" className="mx-3">
               About Us
-            </Nav.Link>
-            <Nav.Link href="#link" className="mx-3">
-              ForLater use
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

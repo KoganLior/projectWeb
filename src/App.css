@@ -74,4 +74,9 @@ footer{
   font-family:sans-serif;
   color: black;
   font-style: italic;
+  
+}
+.addToCartIcon{
+  margin-top: 7px;
+  margin-left: 235px;
 }

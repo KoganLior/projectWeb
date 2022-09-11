@@ -1,6 +1,9 @@
 import { useEffect,useState } from "react"
 import {Col} from "react-bootstrap"
 import { getHomePageProductDetails, getProductImgByID } from "../DAL/Api"
+import { FaCartPlus } from "react-icons/fa";
+
+
 export default function HomePageProduct(props){
   
     // -------------------- getting the product Image -----------------
@@ -20,7 +23,6 @@ export default function HomePageProduct(props){
 
      async function getProductPrice(){
        const productPrice= await getHomePageProductDetails(props.id)
-       console.log(productPrice[0].price)
        setPrice(productPrice[0].price)
      } 
      useEffect(()=>{getProductPrice()},[])
@@ -40,6 +42,7 @@ export default function HomePageProduct(props){
               <div class="ms-3 d-inline-block align-middle">
                 <h5 className="mt-3">{props.name}</h5>
                 <h6 className="homePageProductPrice">{productPrice} $ </h6>
+                <FaCartPlus className="addToCartIcon" size={"1.7em"}></FaCartPlus>
               </div>
             </div>
           </Col>
