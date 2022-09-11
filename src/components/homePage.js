@@ -1,6 +1,18 @@
 import { Col, Container, Row, Carousel } from "react-bootstrap";
-
+import {  getHomeProducts } from "../DAL/Api";
+import { useState , useEffect } from "react";
+import HomePageProduct from "./homePageProduct";
 export default function HomePage() {
+
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    async function getData() {
+      setProducts(await getHomeProducts())
+    }
+    getData()
+  }, [])
+  
   return (
     <>
       <Container>
@@ -34,63 +46,9 @@ export default function HomePage() {
 
         {/* Mini Products Row */}
         <h1 className="homePageRowTitle">Best Sellers</h1>
-        <Row className="p-10">
-          <Col sm="3" >
-            <div className="p-2">
-              <img
-                src="https://dummyimage.com/800x500/b6a9d6/151b57"
-                alt=""
-                width="340"
-                className="img-fluid rounded shadow-sm"
-              />
-              <div class="ms-3 d-inline-block align-middle">
-                <h5 className="mt-3">Product Name here</h5>
-                <h6 className="mt-1 mx-0">Price: 10.3₪</h6>
-              </div>
-            </div>
-          </Col>
-          <Col sm="3">
-            <div className="p-2">
-              <img
-                src="https://dummyimage.com/800x500/b6a9d6/151b57"
-                alt=""
-                width="340"
-                className="img-fluid rounded shadow-sm"
-              />
-              <div class="ms-3 d-inline-block align-middle">
-                <h5 className="mt-3">Product Name here</h5>
-                <h6 className="mt-1 mx-0">Price: 10.3₪</h6>
-              </div>
-            </div>
-          </Col>
-          <Col sm="3">
-            <div className="p-2">
-              <img
-                src="https://dummyimage.com/800x500/b6a9d6/151b57"
-                alt=""
-                width="340"
-                className="img-fluid rounded shadow-sm"
-              />
-              <div class="ms-3 d-inline-block align-middle">
-                <h5 className="mt-3">Product Name here</h5>
-                <h6 className="mt-1 mx-0">Price: 10.3₪</h6>
-              </div>
-            </div>
-          </Col>
-          <Col sm="3">
-            <div className="p-2">
-              <img
-                src="https://dummyimage.com/800x500/b6a9d6/151b57"
-                alt=""
-                width="340"
-                className="img-fluid rounded shadow-sm"
-              />
-              <div class="ms-3 d-inline-block align-middle">
-                <h5 className="mt-3">Product Name here</h5>
-                <h6 className="mt-1 mx-0">Price: 10.3$</h6>
-              </div>
-            </div>
-          </Col>
+        <Row>
+          {products.slice(0,4).map(product=> <HomePageProduct name={product.name} id={product.id}></HomePageProduct>)}
+          
         </Row>
 
 
@@ -98,63 +56,8 @@ export default function HomePage() {
         <h1 className="homePageRowTitle">On Sale </h1>
 
 
-        <Row className="p-10">
-          <Col sm="3" >
-            <div className="p-2">
-              <img
-                src="https://dummyimage.com/800x500/b6a9d6/151b57"
-                alt=""
-                width="340"
-                className="img-fluid rounded shadow-sm"
-              />
-              <div class="ms-3 d-inline-block align-middle">
-                <h5 className="mt-3">Product Name here</h5>
-                <h6 className="mt-1 mx-0">Price: 10.3₪</h6>
-              </div>
-            </div>
-          </Col>
-          <Col sm="3">
-            <div className="p-2">
-              <img
-                src="https://dummyimage.com/800x500/b6a9d6/151b57"
-                alt=""
-                width="340"
-                className="img-fluid rounded shadow-sm"
-              />
-              <div class="ms-3 d-inline-block align-middle">
-                <h5 className="mt-3">Product Name here</h5>
-                <h6 className="mt-1 mx-0">Price: 10.3₪</h6>
-              </div>
-            </div>
-          </Col>
-          <Col sm="3">
-            <div className="p-2">
-              <img
-                src="https://dummyimage.com/800x500/b6a9d6/151b57"
-                alt=""
-                width="340"
-                className="img-fluid rounded shadow-sm"
-              />
-              <div class="ms-3 d-inline-block align-middle">
-                <h5 className="mt-3">Product Name here</h5>
-                <h6 className="mt-1 mx-0">Price: 10.3₪</h6>
-              </div>
-            </div>
-          </Col>
-          <Col sm="3">
-            <div className="p-2">
-              <img
-                src="https://dummyimage.com/800x500/b6a9d6/151b57"
-                alt=""
-                width="340"
-                className="img-fluid rounded shadow-sm"
-              />
-              <div class="ms-3 d-inline-block align-middle">
-                <h5 className="mt-3">Product Name here</h5>
-                <h6 className="mt-1 mx-0">Price: 10.3$</h6>
-              </div>
-            </div>
-          </Col>
+        <Row>
+        {products.slice(4,products.length).map(product=> <HomePageProduct name={product.name} id={product.id} key={product.name} ></HomePageProduct>)}
         </Row>
 
       </Container>
