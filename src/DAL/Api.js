@@ -36,3 +36,9 @@ export async function getHomePageProductDetails(productID){
         .then(response=>response.json())
         .then(data=>data)
 }
+
+export async function getCategories(){
+    return fetch("http://localhost:3300/categories/all")
+    .then(response=>response.json())
+    .then(data=>data)
+}
